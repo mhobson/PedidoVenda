@@ -22,8 +22,34 @@ header > div {
 	margin-left: 8px;
 }
 
+header > div > h2 {
+	padding: 5px;
+	margin-top: 0px 
+}
+
+#login-dialog {
+	width: 290px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+.grid-login {
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+}
+
 #conteudo {
 	padding: 0px 8px
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: 500;
+	margin: 0px;
+	padding: 0px
 }
 
 footer {
