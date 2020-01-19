@@ -59,6 +59,14 @@ h1 {
 	height: 34px
 }
 
+.ajaxStatus {
+	position: fixed;
+	top: 55px;
+	right: 10px;
+	width: 35px;
+	height: 35px
+}
+
 .separator {
 	margin: 0;
 	margin-top: 20px; 

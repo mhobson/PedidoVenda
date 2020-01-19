@@ -13,22 +13,30 @@
 	</h:head>
 
 	<h:body>
+		<p:ajaxStatus styleClass="ajaxStatus">
+			<f:facet name="start">
+				<h:graphicImage library="images" name="loading.gif" />
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value="" />
+			</f:facet>
+		</p:ajaxStatus>
+		
 		<header>
 			<div>
 				<h2>Sistema de Pedido de Vendas</h2>
 			</div>
 		</header>
+	
+		<div id="conteudo">
+			<ui:insert name="corpo"/>
+		</div>
+		
+		<p:separator styleClass="separator" />
+		
+		<footer>
+			MH Developer - Desenvolvimento de Sistemas sob Demanda -
+			<a href="http://www.mhdeveloper.com" target="_blank">www.mhdeveloper.com</a>
+		</footer>
 	</h:body>
-	
-	<div id="conteudo">
-		<ui:insert name="corpo"/>
-	</div>
-	
-	<p:separator styleClass="separator" />
-	
-	<footer>
-		MH Developer - Desenvolvimento de Sistemas sob Demanda -
-		<a href="http://www.mhdeveloper.com" target="_blank">www.mhdeveloper.com</a>
-	</footer>
-
 </html>
