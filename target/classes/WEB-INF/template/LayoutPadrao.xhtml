@@ -24,9 +24,34 @@
 		</p:ajaxStatus>
 		
 		<header>
-			<div>
+			<div style="float: left">
 				<h2>Sistema de Pedido de Vendas</h2>
 			</div>
+			
+			<div style="float: right; margin-right: 110px">
+				
+				<span style="float: left; height: 30px; line-height: 30px; margin-right: 60px">
+					Olá Usuário!
+				</span>
+				
+				<h:form style="display: inline-block">
+					<p:menubar styleClass="menu-sistema">
+						<p:submenu label="Cadastros">
+							<p:menuitem value="Clientes" />
+							<p:menuitem value="Usuários" />
+							<p:separator/>
+							<p:menuitem value="Categorias" />
+							<p:menuitem value="Produtos" outcome="/produtos/PesquisaProdutos" />
+						</p:submenu>
+						<p:submenu label="Pedidos">
+							<p:menuitem value="Novo pedido" />
+							<p:menuitem value="Pesquisa" />
+						</p:submenu>
+						<p:menuitem value="Sair"/>
+					</p:menubar>
+				</h:form>
+			</div>
+			<div style="clear: both"></div>
 		</header>
 	
 		<div id="conteudo">
@@ -37,7 +62,7 @@
 		
 		<footer>
 			MH Developer - Desenvolvimento de Sistemas -
-			<a href="http://www.mhdeveloper.com" target="_blank">www.mhdeveloper.com</a>
+			<a href="https://www.linkedin.com/in/marcoshobson/" target="_blank">linkedin.com/in/marcoshobson/</a>
 		</footer>
 		
 		<script>
