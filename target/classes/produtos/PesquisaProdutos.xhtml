@@ -13,10 +13,10 @@
 			
 			<p:toolbar style="margin-top: 20px; padding: 5px">
 				<p:toolbarGroup>
-					<p:commandButton value="Pesquisar" id="botaoPesquisar" style="margin-left: 5px" />
+					<p:commandButton value="Buscar" id="botaoPesquisar" style="margin-left: 5px" />
 				</p:toolbarGroup>
 				<p:toolbarGroup align="right">
-					<p:button value="Novo Produto" outcome="/produtos/CadastroProduto"/>
+					<p:button value="Cadastrar Produto" outcome="/produtos/CadastroProduto"/>
 				</p:toolbarGroup>
 			</p:toolbar>
 			
@@ -28,7 +28,7 @@
 				<p:inputText id="nome" size="60" />			
 			</p:panelGrid>
 			
-			<p:dataTable id="produtosTable" value="#{pesquisaProdutosBean.produtosFiltrados}" var="produto"
+			<p:dataTable id="produtosTable" value="#{pesquisaProdutosBean.produtosFiltrados}" var="produto" stickyHeader="true"
 					style="margin-top: 20px" emptyMessage="Nenhum produto encontrado." rows="20"
 					paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
 					

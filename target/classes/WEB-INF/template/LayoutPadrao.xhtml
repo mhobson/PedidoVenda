@@ -35,19 +35,20 @@
 				</span>
 				
 				<h:form style="display: inline-block">
-					<p:menubar styleClass="menu-sistema">
+					<p:menubar styleClass="menu-sistema" autoDisplay="false">
+						<p:menuitem value="Home" outcome="/Home" />
 						<p:submenu label="Cadastros">
-							<p:menuitem value="Clientes" />
-							<p:menuitem value="Usuários" />
+							<p:menuitem value="Clientes" disabled="true" />
+							<p:menuitem value="Usuários" disabled="true" />
 							<p:separator/>
-							<p:menuitem value="Categorias" />
+							<p:menuitem value="Categorias" disabled="true" />
 							<p:menuitem value="Produtos" outcome="/produtos/PesquisaProdutos" />
 						</p:submenu>
 						<p:submenu label="Pedidos">
-							<p:menuitem value="Novo pedido" />
-							<p:menuitem value="Pesquisa" />
+							<p:menuitem value="Novo pedido" disabled="true" />
+							<p:menuitem value="Pesquisa" disabled="true" />
 						</p:submenu>
-						<p:menuitem value="Sair"/>
+						<p:menuitem value="Sair" />
 					</p:menubar>
 				</h:form>
 			</div>
