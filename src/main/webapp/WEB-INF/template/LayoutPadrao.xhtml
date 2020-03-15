@@ -34,7 +34,7 @@
 					Olá Usuário!
 				</span>
 				
-				<h:form style="display: inline-block">
+				<h:form id="menuForm" style="display: inline-block">
 					<p:menubar styleClass="menu-sistema" autoDisplay="false">
 						<p:menuitem value="Home" url="/" />
 						<p:submenu label="Cadastros">
@@ -46,7 +46,7 @@
 						</p:submenu>
 						<p:submenu label="Pedidos">
 							<p:menuitem value="Novo pedido" disabled="true" />
-							<p:menuitem value="Pesquisa" disabled="true" />
+							<p:menuitem value="Pesquisa" outcome="/pedidos/PesquisaPedidos" />
 						</p:submenu>
 						<p:menuitem value="Sair" />
 					</p:menubar>

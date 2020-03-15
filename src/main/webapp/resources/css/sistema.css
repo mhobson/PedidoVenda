@@ -59,6 +59,18 @@ h1 {
 	height: 34px
 }
 
+.ui-selectmanycheckbox td {
+	padding: 0px !important 
+}
+
+.ui-selectmanycheckbox td label {
+	padding-right: 10px !important
+}
+.ui-chkbox-box > ui-icon{
+	width: 20px;
+	height: 20px
+}
+
 .ajaxStatus {
 	position: fixed;
 	top: 55px;

@@ -1,0 +1,92 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de Pedidos</ui:define>
+
+	<ui:define name="corpo">
+		<h:form>
+			<h1>Pesquisa de Pedidos</h1>
+			
+			<p:toolbar style="margin-top: 20px; padding: 5px">
+				<p:toolbarGroup>
+					<p:commandButton value="Buscar" id="botaoPesquisar" style="margin-left: 5px" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Cadastrar Pedido" onclick="return false" />
+				</p:toolbarGroup>
+			</p:toolbar>
+			
+			<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				<p:outputLabel value="Número" />
+				<h:panelGroup>
+					<p:inputText size="10" />
+					a
+					<p:inputText size="10" />
+				</h:panelGroup>
+				
+				<p:outputLabel value="Data de criação" />
+				<h:panelGroup>
+					<p:calendar size="10" pattern="dd/MM/aaaa" />
+					a
+					<p:calendar size="10" pattern="dd/MM/aaaa" />
+				</h:panelGroup>
+				
+				<p:outputLabel value="Vendedor" />
+				<p:inputText size="40" />
+				
+				<p:outputLabel value="Cliente" />
+				<p:inputText size="40" />
+				
+				<p:outputLabel value="Status" />
+				<p:selectManyCheckbox>
+					<f:selectItem itemLabel="Orçamento" />
+					<f:selectItem itemLabel="Emitido" />
+					<f:selectItem itemLabel="Cancelado" />
+				</p:selectManyCheckbox>
+			</p:panelGrid>
+						
+			<p:dataTable id="pedidosTable" value="#{pesquisaPedidosBean.pedidosFiltrados}" var="pedido" stickyHeader="true"
+					style="margin-top: 20px" emptyMessage="Nenhum pedido encontrado." rows="20"
+					paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+				<p:column headerText="Número" style="text-align: center; width: 100px">
+					<h:outputText value="#{pedido}" />
+				</p:column>
+				
+				<p:column headerText="Cliente">
+					<h:outputText value="Cliente #{pedido}" />
+				</p:column>
+				
+				<p:column headerText="Vendedor">
+					<h:outputText value="Vendedor #{pedido}" />
+				</p:column>
+				
+				<p:column headerText="Data do pedido" style="text-align: center; width: 140px">
+					<h:outputText value="01/02/2020" />
+				</p:column>
+
+				<p:column headerText="Valor total" style="text-align: right; width: 120px">
+					<h:outputText value="R$ 1.200,00" />
+				</p:column>
+				
+				<p:column headerText="Status" style="width: 100px">
+					<h:outputText value="Emitido" />
+				</p:column>
+				
+				<p:column style="text-align: center; width: 50px">
+					<p:button icon="ui-icon-pencil" title="Editar" onclick="return false"/>
+				</p:column>
+			</p:dataTable>
+			
+			<p:confirmDialog header="Confirmação de exclusão" widgetVar="confirmacaoExclusao"
+					message="Tem certeza que deseja excluir o produto?">
+				<p:button value="Não" onclick="confirmacaoExclusao.hide(); return false" />
+				<p:commandButton value="Sim" oncomplete="confirmacaoExclusao.hide()" />
+			</p:confirmDialog>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
