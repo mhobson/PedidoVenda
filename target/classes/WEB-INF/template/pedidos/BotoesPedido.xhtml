@@ -7,7 +7,8 @@
 	<p:toolbar style="margin-top: 20px; padding: 5px">
 		<p:toolbarGroup>
 			<p:button value="Novo" outcome="/pedidos/CadastroPedido"/>
-			<p:commandButton value="Salvar" id="botaoSalvar" style="margin-left: 5px" />
+			<p:commandButton value="Salvar" id="botaoSalvar" style="margin-left: 5px" 
+				action="#{cadastroPedidoBean.salvar}" />
 		</p:toolbarGroup>
 		
 		<p:toolbarGroup align="right">
