@@ -3,6 +3,17 @@ package com.mhdeveloper.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="produto")
 public class Produto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,6 +25,8 @@ public class Produto implements Serializable {
 	private Integer quantidadeEstoque;
 	private Categoria categoria;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
@@ -22,6 +35,7 @@ public class Produto implements Serializable {
 		this.id = id;
 	}
 
+	@Column(nullable = false, length = 80)
 	public String getNome() {
 		return nome;
 	}
@@ -30,6 +44,7 @@ public class Produto implements Serializable {
 		this.nome = nome;
 	}
 
+	@Column(nullable = false, length = 20, unique = true)
 	public String getSku() {
 		return sku;
 	}
@@ -38,6 +53,7 @@ public class Produto implements Serializable {
 		this.sku = sku == null ? null : sku.toUpperCase();
 	}
 
+	@Column(name="valor_unitario", nullable = false, precision = 10, scale = 2)
 	public BigDecimal getValorUnitario() {
 		return valorUnitario;
 	}
@@ -46,6 +62,7 @@ public class Produto implements Serializable {
 		this.valorUnitario = valorUnitario;
 	}
 
+	@Column(name="quantidade_estoque", nullable = false, length = 5)
 	public Integer getQuantidadeEstoque() {
 		return quantidadeEstoque;
 	}
@@ -54,6 +71,8 @@ public class Produto implements Serializable {
 		this.quantidadeEstoque = quantidadeEstoque;
 	}
 
+	@ManyToOne
+	@JoinColumn(name = "categoria_id", nullable = false)
 	public Categoria getCategoria() {
 		return categoria;
 	}
