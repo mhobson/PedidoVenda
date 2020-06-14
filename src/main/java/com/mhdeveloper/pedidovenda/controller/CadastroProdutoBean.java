@@ -6,6 +6,7 @@ import java.util.List;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
 
 import com.mhdeveloper.pedidovenda.model.Categoria;
 import com.mhdeveloper.pedidovenda.model.Produto;
@@ -21,8 +22,9 @@ public class CadastroProdutoBean implements Serializable {
 	private CategoriaRepository repository;
 
 	private Produto produto;
-	
-	private List<Categoria> categoriasPai;
+	private Categoria categoriaPai;
+
+	private List<Categoria> categorias;
 	
 	public CadastroProdutoBean() {
 		this.produto = new Produto();
@@ -31,17 +33,27 @@ public class CadastroProdutoBean implements Serializable {
 	public void inicializar() {
 		System.out.println("Inicializando...");
 		
-		categoriasPai = repository.buscarCategoriasPai();
+		categorias = repository.buscarCategorias();
 	}
 	
 	public void salvar() {
+		System.out.println("Categoria pai selecionada: " + categoriaPai.getDescricao());
 	}
 
 	public Produto getProduto() {
 		return produto;
 	}
+	
+	@NotNull
+	public Categoria getCategoriaPai() {
+		return categoriaPai;
+	}
 
-	public List<Categoria> getCategoriasPai() {
-		return categoriasPai;
+	public void setCategoriaPai(Categoria categoriaPai) {
+		this.categoriaPai = categoriaPai;
+	}
+
+	public List<Categoria> getCategorias() {
+		return categorias;
 	}
 }

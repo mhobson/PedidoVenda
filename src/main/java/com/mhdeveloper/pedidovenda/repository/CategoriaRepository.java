@@ -15,7 +15,11 @@ public class CategoriaRepository implements Serializable {
 	@Inject
 	private EntityManager manager;
 	
-	public List<Categoria> buscarCategoriasPai() {
+	public Categoria buscarCategoriaPorId(Long id) {
+		return manager.find(Categoria.class, id);
+	}
+	
+	public List<Categoria> buscarCategorias() {
 		return manager.createQuery("from Categoria", Categoria.class).getResultList();
 	}
 

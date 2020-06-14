@@ -37,9 +37,9 @@
 				<p:inputText id="nome" size="60" maxlength="80" value="#{cadastroProdutoBean.produto.nome}" />
 				
 				<p:outputLabel value="Categoria" for="categoria" />
-				<p:selectOneMenu id="categoria" style="width: 180px" >
+				<p:selectOneMenu id="categoria" value="#{cadastroProdutoBean.categoriaPai}" style="width: 180px" >
 					<f:selectItem itemLabel="Selecione a Categoria" />
-					<f:selectItems value="#{cadastroProdutoBean.categoriasPai}" var="categoria"
+					<f:selectItems value="#{cadastroProdutoBean.categorias}" var="categoria"
 						itemValue="#{categoria}" itemLabel="#{categoria.descricao}" />
 				</p:selectOneMenu>
 				
