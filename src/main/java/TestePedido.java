@@ -6,14 +6,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.mhdeveloper.model.Cliente;
-import com.mhdeveloper.model.EnderecoEntrega;
-import com.mhdeveloper.model.FormaPagamento;
-import com.mhdeveloper.model.ItemPedido;
-import com.mhdeveloper.model.Pedido;
-import com.mhdeveloper.model.Produto;
-import com.mhdeveloper.model.StatusPedido;
-import com.mhdeveloper.model.Usuario;
+import com.mhdeveloper.pedidovenda.model.Cliente;
+import com.mhdeveloper.pedidovenda.model.EnderecoEntrega;
+import com.mhdeveloper.pedidovenda.model.FormaPagamento;
+import com.mhdeveloper.pedidovenda.model.ItemPedido;
+import com.mhdeveloper.pedidovenda.model.Pedido;
+import com.mhdeveloper.pedidovenda.model.Produto;
+import com.mhdeveloper.pedidovenda.model.StatusPedido;
+import com.mhdeveloper.pedidovenda.model.Usuario;
 
 public class TestePedido {
 

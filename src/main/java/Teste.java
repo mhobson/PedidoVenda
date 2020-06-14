@@ -3,9 +3,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.mhdeveloper.model.Cliente;
-import com.mhdeveloper.model.Endereco;
-import com.mhdeveloper.model.TipoPessoa;
+import com.mhdeveloper.pedidovenda.model.Cliente;
+import com.mhdeveloper.pedidovenda.model.Endereco;
+import com.mhdeveloper.pedidovenda.model.TipoPessoa;
 
 public class Teste {
 	

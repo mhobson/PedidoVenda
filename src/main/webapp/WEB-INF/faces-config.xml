@@ -7,7 +7,7 @@
         
         <factory>
         	<exception-handler-factory>
-        		com.mhdeveloper.util.jsf.JsfExceptionHandlerFactory
+        		com.mhdeveloper.pedidovenda.util.jsf.JsfExceptionHandlerFactory
         	</exception-handler-factory>
         </factory>
 
