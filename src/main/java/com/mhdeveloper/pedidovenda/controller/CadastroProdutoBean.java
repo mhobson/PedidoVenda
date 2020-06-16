@@ -6,11 +6,11 @@ import java.util.List;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.NotNull;
 
 import com.mhdeveloper.pedidovenda.model.Categoria;
 import com.mhdeveloper.pedidovenda.model.Produto;
 import com.mhdeveloper.pedidovenda.repository.CategoriaRepository;
+import com.mhdeveloper.pedidovenda.util.jsf.FacesUtil;
 
 @Named
 @ViewScoped
@@ -25,26 +25,31 @@ public class CadastroProdutoBean implements Serializable {
 	private Categoria categoriaPai;
 
 	private List<Categoria> categorias;
+	private List<Categoria> subcategorias;
 	
 	public CadastroProdutoBean() {
 		this.produto = new Produto();
 	}
 	
 	public void inicializar() {
-		System.out.println("Inicializando...");
-		
-		categorias = repository.buscarCategorias();
+		if(FacesUtil.isNotPostback()) {
+			categorias = repository.buscarCategorias();
+		}
+	}
+	
+	public void carregarSubcategorias() {
+		subcategorias = repository.buscarSubcategorias(categoriaPai);
 	}
 	
 	public void salvar() {
 		System.out.println("Categoria pai selecionada: " + categoriaPai.getDescricao());
+		System.out.println("Subcategoria selecionada: " + produto.getCategoria().getDescricao());
 	}
 
 	public Produto getProduto() {
 		return produto;
 	}
 	
-	@NotNull
 	public Categoria getCategoriaPai() {
 		return categoriaPai;
 	}
@@ -55,5 +60,9 @@ public class CadastroProdutoBean implements Serializable {
 
 	public List<Categoria> getCategorias() {
 		return categorias;
+	}
+
+	public List<Categoria> getSubcategorias() {
+		return subcategorias;
 	}
 }

@@ -20,7 +20,12 @@ public class CategoriaRepository implements Serializable {
 	}
 	
 	public List<Categoria> buscarCategorias() {
-		return manager.createQuery("from Categoria", Categoria.class).getResultList();
+		return manager.createQuery("from Categoria where categoriaPai is null", Categoria.class).getResultList();
 	}
 
+	public List<Categoria> buscarSubcategorias(Categoria categoriaPai) {
+		return manager.createQuery("from Categoria where categoriaPai = :pai", Categoria.class)
+				.setParameter("pai", categoriaPai)
+				.getResultList();
+	}
 }

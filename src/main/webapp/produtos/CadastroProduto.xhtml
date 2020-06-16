@@ -41,11 +41,14 @@
 					<f:selectItem itemLabel="Selecione a Categoria" />
 					<f:selectItems value="#{cadastroProdutoBean.categorias}" var="categoria"
 						itemValue="#{categoria}" itemLabel="#{categoria.descricao}" />
+					<p:ajax listener="#{cadastroProdutoBean.carregarSubcategorias}" update="subcategoria" />
 				</p:selectOneMenu>
 				
-				<p:outputLabel value="Subcategoria" for="subCategoria" />
-				<p:selectOneMenu id="subCategoria" style="width: 180px" >
+				<p:outputLabel value="Subcategoria" for="subcategoria" />
+				<p:selectOneMenu id="subcategoria" style="width: 180px" >
 					<f:selectItem itemLabel="Selecione a Subcategoria" value="#{cadastroProdutoBean.produto.categoria}" />
+					<f:selectItems value="#{cadastroProdutoBean.subcategorias}" var="subcategoria"
+						itemValue="#{subcategoria}" itemLabel="#{subcategoria.descricao}" />
 				</p:selectOneMenu>
 				
 				<p:outputLabel value="Valor Unitário" for="valorUnitario" />
